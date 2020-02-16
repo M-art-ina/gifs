@@ -28,4 +28,12 @@ public class GifRepository {
         return result;
     }
 
+    public Gif getGifByName(String name){
+       for (Gif g: ALL_GIFS){
+            if (g.getName().equals(name)){
+                return g;
+            }
+        } return null;
+    }
+
  }
