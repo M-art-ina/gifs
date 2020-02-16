@@ -3,6 +3,7 @@ package pl.martina.gifs.repository;
 import org.springframework.stereotype.Repository;
 import pl.martina.gifs.model.Gif;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,4 +37,14 @@ public class GifRepository {
         } return null;
     }
 
- }
+    public List<Gif> getGifsByCategoryId(int id) {
+        List<Gif> categoryGifs = new ArrayList<>();
+        for (Gif g : ALL_GIFS) {
+            if (g.getCategoryId() == id) {
+                categoryGifs.add(g);
+            }
+        } return categoryGifs;
+
+    }
+
+}
